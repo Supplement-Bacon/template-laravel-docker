@@ -15,7 +15,7 @@ This repository contains all you need to start the developement of Laravel appli
 ```bash
 $ git clone git@github.com:Supplement-Bacon/template-laravel-docker.git
 
-$ cp .env.dist .env
+$ cp env.example .env
 
 $ docker-compose build app
 $ docker-compose up -d
