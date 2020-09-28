@@ -1,7 +1,6 @@
-<p align="center"><a href="https://supplement-bacon.com" target="_blank"><img src="https://supplement-bacon.com/images/bacon-circle.png" width="200"></a><br><h1>Supplement Bacon</h1></p>
+<p align="center"><a href="https://supplement-bacon.com" target="_blank"><img src="https://supplement-bacon.com/images/cover2.png" width="600"></a></p>
 
 # Laravel X Docker
-
 This repository contains all you need to start the developement of Laravel applications in an containerized environment. 
 
  
