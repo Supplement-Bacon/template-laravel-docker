@@ -31,12 +31,9 @@ $ docker-compose exec app composer install
 $ docker-compose exec app php artisan key:generate
 ```
 
-# Access to laravel application
+## Access to laravel application
 ```bash
 http://server_domain_or_IP:8000
 # OR
 http://localhost:8000
 ```
-
-## CI/CD
-Will be added soon ...
