@@ -7,7 +7,7 @@ This repository contains all you need to start the developement of Laravel appli
 ### Technologies
 
 | SERVICE | PHP | MariaDB |   Nginx   | Laravel |
-|---------|-----|---------|-----------|---------|
+|:-------:|:---:|:-------:|:---------:|:-------:|
 | VERSION | 7.4 | 10.5    |1.17-alpine| 8.6.0   |
 
 ## Setting up Docker
