@@ -37,9 +37,10 @@ logs:
 #####                      Laravel                     #####
 ############################################################
 
-laravel-intall:
+laravel-install:
 	$(EXEC) app composer install
 	$(EXEC) app $(ARTISAN) key:generate
+	$(EXEC) app $(ARTISAN) migrate
 
 
 
@@ -47,7 +48,7 @@ laravel-intall:
 #####                      Passport                    #####
 ############################################################
 
-passport-intall:
+passport-install:
 	$(EXEC) app $(ARTISAN) passport:install
 
 
