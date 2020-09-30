@@ -3,7 +3,7 @@
 # Laravel X Docker - API Edition
 This repository contains all you need to start the developement of REST API using the Laravel framework in an containerized environment.
 Laravel Passport provides a full OAuth2 server implementation.
-Using the OpenAPI standard allow to create a nice and sweet API documentation displayed by Swagger
+Using the OpenAPI standard allow to create a nice and sweet API documentation displayed by Swagger.
 
  
 ### Technologies
@@ -16,6 +16,7 @@ Using the OpenAPI standard allow to create a nice and sweet API documentation di
 
 ```bash
 $ git clone git@github.com:Supplement-Bacon/template-laravel-docker.git --branch api-edition --single-branch
+$ cd template-laravel-docker
 
 $ cp env.example .env
 
