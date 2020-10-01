@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="unit" tests="1" assertions="0" errors="1" failures="0" skipped="0" time="0.099941">
+    <testcase name="testRegister" class="ExampleTest" file="/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/tests/unit/UserTest.php" assertions="0" time="0.099941">
+      <error type="Illuminate\Database\QueryException">ExampleTest::testRegister
+Illuminate\Database\QueryException: SQLSTATE[HY000]: General error: 1 no such table: users (SQL: insert into "users" ("email", "password", "updated_at", "created_at") values (johndoe@example.com, $2y$10$IfNipAQpi/7zcvzXIuvyYOXJ1d3DlqCvJDOzwTV57b9X2c09CDjGS, 2020-10-01 21:03:11, 2020-10-01 21:03:11))
+
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Connection.php:671
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Connection.php:631
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Connection.php:465
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Connection.php:417
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Query/Processors/Processor.php:32
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Query/Builder.php:2871
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:1416
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:894
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:859
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:722
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:775
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Support/helpers.php:263
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Builder.php:776
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Support/Traits/ForwardsCalls.php:23
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1728
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Model.php:1740
+/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/tests/unit/UserTest.php:28
+</error>
+    </testcase>
+  </testsuite>
+</testsuites>
