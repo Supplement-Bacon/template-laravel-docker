@@ -4,7 +4,7 @@
 #
 version: 2
 jobs:
-  test:
+  build:
     docker:
       # Specify the version you desire here
       - image: circleci/php:7.4.9-fpm-buster
@@ -72,6 +72,9 @@ jobs:
       - run: touch storage/testing.sqlite
       - run: php artisan migrate --env=testing --database=mysql --force
 
+
+  test:
+    steps:
       # run tests with phpunit or codecept
       #- run: ./vendor/bin/phpunit
       # this example uses codecept but you're not limited to it
@@ -84,6 +87,21 @@ jobs:
 
 workflows:
   version: 2
-  workflow:
+  commit:
     jobs:
-      - test
+      - build
+      - test:
+        - requires:
+            - build
+
+  # deploy:
+  #   triggers:
+
+  #   jobs:
+  #     - build
+  #     - test:
+  #       - requires:
+  #           - build
+  #     - deploy:
+  #       - requires:
+  #           - test
