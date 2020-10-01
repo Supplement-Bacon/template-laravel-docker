@@ -13,7 +13,7 @@ jobs:
         environment:
           MYSQL_USER: forge
           MYSQL_DATABASE: forge
-          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_ROOT_PASSWORD: secret
           MYSQL_PASSWORD: 'forge'
 
       # Specify service dependencies here if necessary
