@@ -10,11 +10,11 @@ jobs:
       - image: circleci/php:7.4.9-fpm-buster
       - image: circleci/mariadb:10.5.5-focal
         command: mysqld --default-authentication-plugin=mysql_native_password
-          environment:
-            MYSQL_USER: forge
-            MYSQL_DATABASE: forge
-            MYSQL_ROOT_PASSWORD: ''
-            MYSQL_PASSWORD: 'forge'
+        environment:
+          MYSQL_USER: forge
+          MYSQL_DATABASE: forge
+          MYSQL_ROOT_PASSWORD: ''
+          MYSQL_PASSWORD: 'forge'
 
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -30,15 +30,15 @@ jobs:
 
       - run:
         name: Install MySQL driver
-          command: |
-            sudo docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
-            sudo docker-php-ext-install zip bcmath pdo_mysql
+        command: |
+          sudo docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
+          sudo docker-php-ext-install zip bcmath pdo_mysql
 
       - run:
-          name: Install Node
-          command: |
-            curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
-            sudo apt-get install -y nodejs
+        name: Install Node
+        command: |
+          curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+          sudo apt-get install -y nodejs
 
       # Download and cache dependencies
 
