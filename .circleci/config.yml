@@ -95,5 +95,20 @@ workflows:
     jobs:
       - build
       - test:
-        require:
-          build
+          requires:
+            - build
+
+  # build-n-deploy:
+  #   jobs:
+  #     - build:
+  #         filters:  # required since `deploy` has tag filters AND requires `build`
+  #           tags:
+  #             only: /.*/
+  #     - deploy:
+  #         requires:
+  #           - build
+  #         filters:
+  #           tags:
+  #             only: /^v.*/
+  #           branches:
+  #             ignore: /.*/
