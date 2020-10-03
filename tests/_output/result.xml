@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="unit" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.057345">
-    <testcase name="testRegister" class="ExampleTest" file="/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/tests/unit/UserTest.php" assertions="1" time="0.057345"/>
+  <testsuite name="unit" tests="1" assertions="1" errors="0" failures="0" skipped="0" time="0.058344">
+    <testcase name="testRegister" class="ExampleTest" file="/Users/samuelhassid/Documents/Supplément Bacon/Github/template-laravel-docker/tests/unit/UserTest.php" assertions="1" time="0.058344"/>
   </testsuite>
 </testsuites>
