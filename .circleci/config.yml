@@ -28,10 +28,7 @@ jobs:
       # composer cache
       - restore_cache:
           keys:
-          # "composer.json" can be used if "composer.lock"
-          # is not committed to the repository.
           - composer-v1-{{ checksum "composer.lock" }}
-          # fallback to using the latest cache if no exact match is found
           - composer-v1-
       - run: composer install -n --prefer-dist
       - save_cache:
@@ -62,6 +59,18 @@ jobs:
 
     steps:
       - checkout
+
+      # composer cache
+      - restore_cache:
+        keys:
+        - composer-v1-{{ checksum "composer.lock" }}
+        - composer-v1-
+
+      # node cache
+      - restore_cache:
+        keys:
+          - node-v4-{{ checksum "package.json" }}
+          - node-v4-
 
       # run tests with codeception
       - run:
