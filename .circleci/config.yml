@@ -1,0 +1,114 @@
+# PHP CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-php/ for more details
+#
+version: 2
+jobs:
+  build:
+    docker:
+      - image: circleci/php:7.4.9-fpm-buster
+
+    steps:
+      - checkout
+
+      - run:
+          name: Install MySQL driver
+          command: |
+            sudo docker-php-ext-configure pdo_mysql --with-pdo-mysql=mysqlnd
+            sudo docker-php-ext-install zip bcmath pdo_mysql
+
+      - run:
+          name: Install Node
+          command: |
+            curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+
+      # Download and cache dependencies
+
+      # composer cache
+      - restore_cache:
+          keys:
+          - composer-v1-{{ checksum "composer.lock" }}
+          - composer-v1-
+      - run: composer install -n --prefer-dist
+      - save_cache:
+          key: composer-v1-{{ checksum "composer.lock" }}
+          paths:
+            - vendor
+
+      # node cache
+      - restore_cache:
+          keys:
+            - node-v4-{{ checksum "package.json" }}
+            - node-v4-
+      - run: npm install
+      - save_cache:
+          key: node-v4-{{ checksum "package.json" }}
+          paths:
+            - node_modules
+            - ~/.yarn
+
+  test:
+    docker:
+      - image: circleci/php:7.4.9-fpm-buster
+
+    steps:
+      - checkout
+
+      # composer cache
+      - restore_cache:
+          keys:
+          - composer-v1-{{ checksum "composer.lock" }}
+          - composer-v1-
+
+      # node cache
+      - restore_cache:
+          keys:
+            - node-v4-{{ checksum "package.json" }}
+            - node-v4-
+
+      # prepare the database
+      - run:
+          name: Create database file
+          command: touch storage/testing.sqlite
+      - run:
+          name: Migrate database
+          command: php artisan migrate --env=testing --database=sqlite --force
+
+      # run tests with codeception
+      - run:
+          name: Build Tests
+          command: ./vendor/bin/codecept build
+
+      - run:
+          name: Execute Tests
+          command: ./vendor/bin/codecept run --xml result.xml
+
+      - store_test_results:
+          path: tests/_output
+      - store_artifacts:
+          path: tests/_output
+
+workflows:
+  version: 2
+  build_and_test:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build
+
+  # build-n-deploy:
+  #   jobs:
+  #     - build:
+  #         filters:  # required since `deploy` has tag filters AND requires `build`
+  #           tags:
+  #             only: /.*/
+  #     - deploy:
+  #         requires:
+  #           - build
+  #         filters:
+  #           tags:
+  #             only: /^v.*/
+  #           branches:
+  #             ignore: /.*/
