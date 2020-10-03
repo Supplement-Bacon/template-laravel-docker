@@ -62,15 +62,15 @@ jobs:
 
       # composer cache
       - restore_cache:
-        keys:
-        - composer-v1-{{ checksum "composer.lock" }}
-        - composer-v1-
+          keys:
+          - composer-v1-{{ checksum "composer.lock" }}
+          - composer-v1-
 
       # node cache
       - restore_cache:
-        keys:
-          - node-v4-{{ checksum "package.json" }}
-          - node-v4-
+          keys:
+            - node-v4-{{ checksum "package.json" }}
+            - node-v4-
 
       # run tests with codeception
       - run:
