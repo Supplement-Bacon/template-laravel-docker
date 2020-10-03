@@ -77,12 +77,12 @@ jobs:
     steps:
       # run tests with codeception
       - run:
-        name: Build Tests
-        command: ./vendor/bin/codecept build
+          name: Build Tests
+          command: ./vendor/bin/codecept build
 
       - run:
-        name: Execute Tests
-        command: ./vendor/bin/codecept run --xml result.xml
+          name: Execute Tests
+          command: ./vendor/bin/codecept run --xml result.xml
 
       - store_test_results:
           path: tests/_output
@@ -94,4 +94,6 @@ workflows:
   build_and_test:
     jobs:
       - build
-      - test
+      - test:
+        require:
+          build
