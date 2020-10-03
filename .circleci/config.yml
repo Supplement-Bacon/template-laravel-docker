@@ -48,11 +48,6 @@ jobs:
             - node_modules
             - ~/.yarn
 
-      # prepare the database
-      - run: touch storage/testing.sqlite
-      - run: php artisan migrate --env=testing --database=sqlite --force
-
-
   test:
     docker:
       - image: circleci/php:7.4.9-fpm-buster
@@ -71,6 +66,14 @@ jobs:
           keys:
             - node-v4-{{ checksum "package.json" }}
             - node-v4-
+
+      # prepare the database
+      - run:
+          name: Create database file
+          command: touch storage/testing.sqlite
+      - run:
+          name: Migrate database
+          commande: php artisan migrate --env=testing --database=sqlite --force
 
       # run tests with codeception
       - run:
