@@ -37,3 +37,6 @@ http://server_domain_or_IP:8000
 # OR
 http://localhost:8000
 ```
+
+## Continuous Integration and Delivery
+With the file `circleci/config.yml` you can build and test your app automoticallty with CircleCI.
