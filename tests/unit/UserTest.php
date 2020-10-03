@@ -22,10 +22,15 @@ class ExampleTest extends Unit
 
     public function testRegister()
     {
+        $name = 'John Doe';
         $email = 'johndoe@example.com';
         $password = Hash::make('password');
 
-        User::create(['email' => $email, 'password' => $password]);
+        User::create([
+            'name' => $name,
+            'email' => $email,
+            'password' => $password
+        ]);
 
         $this->tester->seeRecord('users', ['email' => $email, 'password' => $password]);
     }
