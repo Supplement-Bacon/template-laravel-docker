@@ -73,7 +73,7 @@ jobs:
           command: touch storage/testing.sqlite
       - run:
           name: Migrate database
-          commande: php artisan migrate --env=testing --database=sqlite --force
+          command: php artisan migrate --env=testing --database=sqlite --force
 
       # run tests with codeception
       - run:
