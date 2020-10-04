@@ -52,6 +52,9 @@ laravel-install:
 passport-install:
 	$(EXEC) app $(ARTISAN) passport:install
 
+laravel-setup-database:
+	$(EXEC) app $(ARTISAN) migrate --force
+
 laravel-setup-test-database:
 	$(EXEC) app touch storage/testing.sqlite
 	$(EXEC) app $(ARTISAN) migrate --env=testing --database=sqlite --force
