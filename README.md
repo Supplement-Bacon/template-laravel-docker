@@ -39,4 +39,4 @@ http://localhost:8000
 ```
 
 ## Continuous Integration and Delivery
-With the file `circleci/config.yml` you can build and test your app automoticallty with CircleCI.
+With the file `circleci/config.yml` you can build and test your app automatically with CircleCI.
