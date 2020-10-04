@@ -10,7 +10,7 @@ Using the OpenAPI standard allow to create a nice and sweet API documentation di
 
 | SERVICE | PHP | MariaDB |   Nginx   | Laravel |
 |:-------:|:---:|:-------:|:---------:|:-------:|
-| VERSION | 7.4 | 10.5    |1.17-alpine| 8.6.0   |
+| VERSION | 7.4 | 10.5    |1.17-alpine| 8.8.0   |
 
 ## Setting up Docker
 
