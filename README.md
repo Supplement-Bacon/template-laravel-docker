@@ -51,5 +51,15 @@ To disable this, set the `L5_SWAGGER_GENERATE_ALWAYS` in `.env` to `false`
 $ make swagger-generate
 ```
 
+## Tests
+This repository is configured to use Codeception to write your tests
+```bash
+# Setup local tests database using SQLite
+$ make laravel-setup-test-database
+
+# Execute the tests
+$ make laravel-tests
+```
+
 ## Continuous Integration and Delivery
 With the file `circleci/config.yml` you can build and test your app automatically with CircleCI.

@@ -9,6 +9,7 @@ DOCK=docker-compose
 RUN=$(DOCK) run --rm
 EXEC=$(DOCK) exec
 ARTISAN=php artisan
+CODECEPT=./vendor/bin/codecept
 
 ############################################################
 #####                      Docker                      #####
@@ -51,6 +52,13 @@ laravel-install:
 passport-install:
 	$(EXEC) app $(ARTISAN) passport:install
 
+laravel-setup-test-database:
+	$(EXEC) app touch storage/testing.sqlite
+	$(EXEC) app $(ARTISAN) migrate --env=testing --database=sqlite --force
+
+laravel-tests:
+	$(EXEC) app $(CODECEPT) build
+	$(EXEC) app $(CODECEPT) run --xml result.xml
 
 
 ############################################################
