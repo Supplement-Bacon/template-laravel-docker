@@ -44,5 +44,5 @@ _ide_*
 
 # End of https://www.toptal.com/developers/gitignore/api/laravel,visualstudiocode
 
-# Tests database
+### Tests Databases ###
 storage/*.sqlite

@@ -50,3 +50,6 @@ To disable this, set the `L5_SWAGGER_GENERATE_ALWAYS` in `.env` to `false`
 ```bash
 $ make swagger-generate
 ```
+
+## Continuous Integration and Delivery
+With the file `circleci/config.yml` you can build and test your app automatically with CircleCI.
