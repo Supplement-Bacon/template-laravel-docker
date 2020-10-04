@@ -43,15 +43,6 @@ laravel-install:
 	$(EXEC) app $(ARTISAN) key:generate
 	$(EXEC) app $(ARTISAN) migrate
 
-
-
-############################################################
-#####                      Passport                    #####
-############################################################
-
-passport-install:
-	$(EXEC) app $(ARTISAN) passport:install
-
 laravel-setup-database:
 	$(EXEC) app $(ARTISAN) migrate --force
 
@@ -62,6 +53,16 @@ laravel-setup-test-database:
 laravel-tests:
 	$(EXEC) app $(CODECEPT) build
 	$(EXEC) app $(CODECEPT) run --xml result.xml
+
+
+
+############################################################
+#####                      Passport                    #####
+############################################################
+
+passport-install:
+	$(EXEC) app $(ARTISAN) passport:install
+
 
 
 ############################################################
