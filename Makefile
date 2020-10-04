@@ -41,3 +41,21 @@ laravel-install:
 	$(EXEC) app composer install
 	$(EXEC) app $(ARTISAN) key:generate
 	$(EXEC) app $(ARTISAN) migrate
+
+
+
+############################################################
+#####                      Passport                    #####
+############################################################
+
+passport-install:
+	$(EXEC) app $(ARTISAN) passport:install
+
+
+
+############################################################
+#####                      Swagger                     #####
+############################################################
+
+swagger-generate:
+	$(EXEC) app $(ARTISAN) l5-swagger:generate
