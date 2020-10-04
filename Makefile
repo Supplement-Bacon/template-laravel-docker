@@ -43,6 +43,9 @@ laravel-install:
 	$(EXEC) app $(ARTISAN) key:generate
 	$(EXEC) app $(ARTISAN) migrate
 
+laravel-migrate:
+	$(EXEC) app $(ARTISAN) migrate --force
+
 laravel-setup-test-database:
 	$(EXEC) app $(ARTISAN) migrate --env=testing --database=sqlite --force
 
