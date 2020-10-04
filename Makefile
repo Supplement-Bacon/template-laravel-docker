@@ -43,7 +43,7 @@ laravel-install:
 	$(EXEC) app $(ARTISAN) key:generate
 	$(EXEC) app $(ARTISAN) migrate
 
-laravel-setup-database:
+laravel-migrate:
 	$(EXEC) app $(ARTISAN) migrate --force
 
 laravel-setup-test-database:
