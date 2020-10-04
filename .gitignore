@@ -43,3 +43,6 @@ _ide_*
 .history
 
 # End of https://www.toptal.com/developers/gitignore/api/laravel,visualstudiocode
+
+# Tests database
+storage/*.sqlite
