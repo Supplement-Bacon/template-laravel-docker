@@ -47,6 +47,7 @@ laravel-migrate:
 	$(EXEC) app $(ARTISAN) migrate --force
 
 laravel-setup-test-database:
+	$(EXEC) app touch storage/testing.sqlite
 	$(EXEC) app $(ARTISAN) migrate --env=testing --database=sqlite --force
 
 laravel-tests:
