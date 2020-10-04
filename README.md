@@ -1,7 +1,7 @@
 <p align="center"><a href="https://supplement-bacon.com" target="_blank"><img src="https://supplement-bacon.com/images/cover2.png" width="600"></a></p>
 
 # Laravel X Docker
-This repository contains all you need to start the developement of Laravel applications in an containerized environment. 
+This repository contains all what you need to start the developement of Laravel applications in an containerized environment. 
 
  
 ### Technologies
@@ -36,6 +36,16 @@ $ make laravel-install
 http://server_domain_or_IP:8000
 # OR
 http://localhost:8000
+```
+
+## Tests
+This repository is configured to use Codeception to write your tests
+```bash
+# Setup local tests database using SQLite
+$ make laravel-setup-test-database
+
+# Execute the tests
+$ make laravel-tests
 ```
 
 ## Continuous Integration and Delivery

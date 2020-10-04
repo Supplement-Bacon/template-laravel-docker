@@ -9,6 +9,7 @@ DOCK=docker-compose
 RUN=$(DOCK) run --rm
 EXEC=$(DOCK) exec
 ARTISAN=php artisan
+CODECEPT=./vendor/bin/codecept
 
 ############################################################
 #####                      Docker                      #####
@@ -41,3 +42,10 @@ laravel-install:
 	$(EXEC) app composer install
 	$(EXEC) app $(ARTISAN) key:generate
 	$(EXEC) app $(ARTISAN) migrate
+
+laravel-setup-test-database:
+	$(EXEC) app $(ARTISAN) migrate --env=testing --database=sqlite --force
+
+laravel-tests:
+	$(EXEC) app $(CODECEPT) build
+	$(EXEC) app $(CODECEPT) run --xml result.xml
